@@ -1,13 +1,22 @@
-﻿#------------------------------------------------------------------------------------------------
-Write-Output "***********************************************************************************************"
-Write-Output "Active Directory Password Quality Report"
-Write-Output ""
-Write-Output "Purpose: This script retrieves the status of password quality in Active Directory"
-Write-Output ""
-Write-Output "Support: Morten Knudsen - mok@2linkit.net | 40 178 179"
-Write-Output "***********************************************************************************************"
-#------------------------------------------------------------------------------------------------
+﻿#Requires -Version 5.0
+<#
+    .SYNOPSIS
+    This script will do a DCSync (replication of Directory) of your Active Directory to retrieve the password hash keys of all accounts (part of scope)
+    The data will be expoerted into several files for further analysis.
 
+    .NOTES
+    VERSION: 2212
+
+    .COPYRIGHT
+    @mortenknudsendk on Twitter
+    Blog: https://mortenknudsen.net
+    
+    .LICENSE
+    Licensed under the MIT license.
+
+    .WARRANTY
+    Use at your own risk, no warranty given!
+#>
 
 #--------------------------------------------------------
 # PS Modules
