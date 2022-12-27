@@ -2,7 +2,7 @@
 <#
     .SYNOPSIS
     This script will do a DCSync (replication of Directory) of your Active Directory to retrieve the password hash keys of all accounts (part of scope)
-    The data will be expoerted into several files for further analysis.
+    The data will be exported into several TXT-files for further analysis.
 
     .NOTES
     VERSION: 2212
