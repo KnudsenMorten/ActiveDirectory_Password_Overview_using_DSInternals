@@ -39,8 +39,9 @@ Install-Module -Name DSInternals -Force
 # Variables
 #--------------------------------------------------------
 
-# This is the location where your password dictionary file exists. You can start by creating a simple file with one line like Password1234
 $PathOutput = "D:\Scripts\Output"
+
+# This is the location where your password dictionary file exists. You can start by creating a simple file with one line like Password1234
 $Passwords  = "D:\SCRIPTS\DATA\AD-DictionaryPasswords.txt"
 
 
