@@ -40,7 +40,8 @@ Install-Module -Name DSInternals -Force
 #--------------------------------------------------------
 
 # This is the location where your password dictionary file exists. You can start by creating a simple file with one line like Password1234
-$Passwords = "D:\SCRIPTS\DATA\AD-DictionaryPasswords.txt"
+$PathOutput = "D:\Scripts\Output"
+$Passwords  = "D:\SCRIPTS\DATA\AD-DictionaryPasswords.txt"
 
 
 #------------------------------------------------------------------------------------------------------------
@@ -49,10 +50,10 @@ $Passwords = "D:\SCRIPTS\DATA\AD-DictionaryPasswords.txt"
 
 $ExportDateTime = Get-Date -Format "yyyy-MM-dd_HH-mm-ss"
 
-$OutPutReport_ALL                   = "$($global:PathScripts)\OUTPUT\AD-PasswordQualityReport_ALL_$($ExportDateTime).txt"
-$OutPutReport_Enabled_Only_ALL      = "$($global:PathScripts)\OUTPUT\AD-PasswordQualityReport_Enabled_Only_ALL_$($ExportDateTime).txt"
-$OutPutReport_Disabled_Only_ALL     = "$($global:PathScripts)\OUTPUT\AD-PasswordQualityReport_Disabled_Only_ALL_$($ExportDateTime).txt"
-$OutPutReport_Admins_Only_ALL       = "$($global:PathScripts)\OUTPUT\AD-PasswordQualityReport_Admins_Only_ALL_$($ExportDateTime).txt"
+$OutPutReport_ALL                   = "$($PathOutput)\OUTPUT\AD-PasswordQualityReport_ALL_$($ExportDateTime).txt"
+$OutPutReport_Enabled_Only_ALL      = "$($PathOutput)\OUTPUT\AD-PasswordQualityReport_Enabled_Only_ALL_$($ExportDateTime).txt"
+$OutPutReport_Disabled_Only_ALL     = "$($PathOutput)\OUTPUT\AD-PasswordQualityReport_Disabled_Only_ALL_$($ExportDateTime).txt"
+$OutPutReport_Admins_Only_ALL       = "$($PathOutput)\OUTPUT\AD-PasswordQualityReport_Admins_Only_ALL_$($ExportDateTime).txt"
 
 $Result_ALL                         = Get-ADReplAccount -All:$true -Server (Get-ADDomainController).Hostname -NamingContext (Get-ADRootDSE | select *naming*).defaultNamingContext
 $Result_Enabled_Only_ALL            = $Result_ALL | Where-Object { ($_.Enabled -eq $true) -and ($_.SamAccountType -eq "User") }
